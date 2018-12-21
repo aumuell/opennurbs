@@ -56,7 +56,7 @@ CFLAGS = $(ON_GNU_COMMON_FLAGS)
 CCC = g++
 # clang++
 #CCC = c++
-CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
+CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++11
 
 LINK = $(CCC)
 LINKFLAGS = 
