@@ -61,7 +61,7 @@ CCFLAGS = $(ON_GNU_COMMON_FLAGS) -std=c++14
 LINK = $(CCC)
 LINKFLAGS = 
 # Linux link flag needed for libuuid
-#LINKFLAGS = -luuid
+LINKFLAGS = -luuid 
 
 ###############################################################
 
