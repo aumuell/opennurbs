@@ -2204,7 +2204,7 @@ ON_Mesh* ON_SubD::GetLimitSurfaceMesh(
     mesh = destination_mesh;
   else
   {
-    up = std::make_unique< ON_Mesh >();
+    up = std::unique_ptr< ON_Mesh >(new ON_Mesh);
     mesh = up.get();
   }
 
@@ -2657,7 +2657,7 @@ ON_Mesh* ON_SubD::GetControlNetMesh(
     mesh = destination_mesh;
   else
   {
-    up = std::make_unique< ON_Mesh >();
+    up = std::unique_ptr< ON_Mesh >(new ON_Mesh);
     mesh = up.get();
   }
 

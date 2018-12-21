@@ -833,7 +833,7 @@ const ON_Font* ON_ManagedFonts::GetFromFontCharacteristics(
       || font_characteristics.FamilyName().IsNotEmpty();
     if ( false == bHaveName || font_characteristics.HasUnsetProperties(false, false) )
     {
-      fup = std::make_unique< ON_Font >(font_characteristics);
+      fup = std::unique_ptr< ON_Font >(new ON_Font(font_characteristics));
       ON_Font* temporary_font = fup.get();
       if (nullptr != temporary_font)
       {
@@ -953,7 +953,7 @@ const ON_Font* ON_ManagedFonts::GetFromFontCharacteristics(
     if (bIsUnderlined || bIsStrikethrough || point_size > 0.0)
     {
       // Need a copy to set underlined/strikethrough/point_size
-      fup = std::make_unique< ON_Font >(*installed_font);
+      fup = std::unique_ptr< ON_Font >(new ON_Font(*installed_font));
       ON_Font* temporary_font = fup.get();
       if (nullptr != temporary_font)
       {
